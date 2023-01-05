@@ -1,5 +1,7 @@
 # DisQRd: QR Code Generator for Discord
 
+![alt text](https://github.com/ooopoison/DisQRd/blob/main/image.jpeg?raw=true)
+
 ## Introduction
 DisQRd is a simple Discord bot that generates QR codes for any given URL. Simply send the command `/qr <url>` in any Discord server or DM, and the bot will generate a QR code image and send it back to you.
 

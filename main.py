@@ -44,7 +44,7 @@ async def qr(ctx, url: str):
         img.save(f)
 
     # Send QR code PNG in current channel
-    await ctx.send("Aquí está tu código QR en formato PNG:", file=discord.File("qr.png"))
+    await ctx.send("Here is your QR code in PNG format:", file=discord.File("qr.png"))
 
 # EAN13 barcode generation command
 @bot.command()
@@ -61,7 +61,26 @@ async def ean13(ctx, data: str):
     ean13.save('ean13')
 
     # Send EAN13 barcode PNG in current channel
-    await ctx.send("Aquí está tu código de barras EAN13 en formato PNG:", file=discord.File("ean13.png"))
+    await ctx.send("Here is your EAN13 barcode in PNG format:", file=discord.File("ean13.png"))
+
+  
+  # EAN8 barcode generation command
+@bot.command()
+async def ean8(ctx, data: str):
+    """Generates an EAN8 barcode for the given data and sends it in the current channel as a PNG file.
+    
+    Usage: !ean8 <data>
+    """
+
+    # Create EAN8 barcode object
+    ean8 = barcode.get_barcode_class('ean8')(data, writer=ImageWriter())
+
+    # Generate EAN8 barcode image
+    ean8.save('ean8')
+
+    # Send EAN8 barcode PNG in current channel
+    await ctx.send("Here is your EAN8 barcode in PNG format:", file=discord.File("ean8.png"))
+
 
 # Code 39 barcode generation command
 @bot.command()
@@ -78,7 +97,7 @@ async def code39(ctx, data: str):
     code39.save('code39')
 
     # Send Code 39 barcode PNG in current channel
-    await ctx.send("Aquí está tu código de barras Code 39 en formato PNG:", file=discord.File("code39.png"))
+    await ctx.send("Here is your Code 39 barcode in PNG format:", file=discord.File("code39.png"))
 
 # Code 128 barcode generation command
 @bot.command()
@@ -95,7 +114,7 @@ async def code128(ctx, data: str):
     code128.save('code128')
 
     # Send Code 128 barcode PNG in current channel
-    await ctx.send("Aquí está tu código de barras Code 128 en formato PNG:", file=discord.File("code128.png"))
+    await ctx.send("Here is your Code 128 barcode in PNG format:", file=discord.File("code128.png"))
 
 # Help command
 @bot.command()
@@ -107,6 +126,7 @@ async def hello(ctx):
 
     commands_list = [
         ("!qr <url>", "Generates a QR code for the given URL."),
+        ("!ean8 <data>", "Generates a EAN8 barcode for the given data."),
         ("!ean13 <data>", "Generates an EAN13 barcode for the given data."),
         ("!code39 <data>", "Generates a Code 39 barcode for the given data."),
         ("!code128 <data>", "Generates a Code 128 barcode for the given data."),

@@ -7,7 +7,7 @@ DisQRd is a simple Discord bot that generates QR codes and barcodes for any give
 
 ## Installation
 
-1. Install the required dependencies: `pip install -U discord qrcode barcode`
+1. Install the required dependencies: `pip install -U discord qrcode barcode pillow`
 2. Clone this repository: `git clone https://github.com/ooopoison/DisQRd`
 3. Create a new bot in the Discord Developer Portal and obtain its token.
 4. Set the `TOKEN` environment variable to your bot's token.
@@ -17,11 +17,17 @@ DisQRd is a simple Discord bot that generates QR codes and barcodes for any give
 
 To use DisQRd, simply send one of the following commands in any Discord server or DM:
 
+**Show all commands:** `!hello`
+
 **QR code for URL:** `!qr <url>`
+
+**EAN8 barcode:** `!ean8 <data>`
 
 **EAN13 barcode:** `!ean13 <data>`
 
 **Code 39 barcode:** `!code39 <data>`
+
+**Code 128 barcode:** `!code128 <data>`
 
 For example:
 

@@ -1,5 +1,5 @@
 # DisQRd: QR Code Generator
-# Author: ooopoison
+# Author: ooovenenoso
 
 import os
 import discord
@@ -144,7 +144,7 @@ async def info(ctx):
     Usage: !info
     """
 
-    await ctx.send("DisQRd: QR Code Generator\nAuthor: ooopoison\n\nhttps://github.com/ooopoison/DisQRd")
+    await ctx.send("DisQRd: QR Code Generator\nAuthor: ooovenenoso\n\nhttps://github.com/ooovenenoso/DisQRd-QR-Code-and-Barcode-Generator-for-Discord")
 
 # Run bot
 token = os.environ["TOKEN"]
